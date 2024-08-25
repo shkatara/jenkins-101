@@ -41,5 +41,12 @@ pipeline {
                 '''
             }
         }
+        stage('Building the image using a dockerfile') {
+            steps {
+                sh '''
+                docker build -t myappimage:$BUILD_ID .
+                '''
+            }
+        }
     }
 }
