@@ -42,9 +42,6 @@ pipeline {
             }
         }
         stage('Building the image using a dockerfile') {
-            agent {
-              label 'docker-alpine-python'
-            }
             steps {
                 sh '''
                 docker build -t myappimage:$BUILD_ID .
