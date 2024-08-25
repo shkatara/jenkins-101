@@ -43,7 +43,7 @@ pipeline {
         }
         stage('Building the image using a dockerfile') {
             agent {
-              label 'master'
+              label 'docker-alpine-python'
             }
             steps {
                 sh '''
