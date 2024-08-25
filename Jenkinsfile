@@ -42,6 +42,7 @@ pipeline {
             }
         }
         stage('Building the image using a dockerfile') {
+            agent any
             steps {
                 sh '''
                 docker build -t myappimage:$BUILD_ID .
