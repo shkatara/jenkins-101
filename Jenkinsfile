@@ -1,12 +1,18 @@
 pipeline {
     agent { 
         node {
-            label 'docker-agent-python'
+            label 'ec2-instance'
             }
       }
     triggers {
         pollSCM '* * * * *'
     }
+
+    environment {
+      env = "stage"
+      namespace = "adi"
+    }
+
     stages {
         stage('Build') {
             steps {
